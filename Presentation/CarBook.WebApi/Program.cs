@@ -5,8 +5,11 @@ using CarBook.Application.Features.CQRS.Handlers.BannerHandlers;
 using CarBook.Application.Features.CQRS.Handlers.BrandHandlers;
 using CarBook.Application.Features.CQRS.Handlers.CarHandlers;
 using CarBook.Application.Interfaces;
+using CarBook.Application.Interfaces.CarInterfaces;
+using CarBook.Domain.Entities;
 using CarBook.Persistence.Context;
 using CarBook.Persistence.Repositories;
+using CarBook.Persistence.Repositories.CarRepositories;
 
 namespace CarBook.WebApi
 {
@@ -19,8 +22,10 @@ namespace CarBook.WebApi
             // Add services to the container.
             builder.Services.AddDbContext<CarBookContext>();
             builder.Services.AddScoped(typeof(IRepository<>), typeof(Repository<>));
+            builder.Services.AddScoped(typeof(ICarRepository), typeof(CarRepository));
             /**/
             /**/
+
             builder.Services.AddScoped<GetAboutQueryHandler>();
             builder.Services.AddScoped<GetAboutByIdQueryHandler>();
             builder.Services.AddScoped<CreateAboutCommandHandler>();
@@ -28,6 +33,7 @@ namespace CarBook.WebApi
             builder.Services.AddScoped<RemoveAboutCommandHandler>();
             /**/
             /**/
+
             builder.Services.AddScoped<GetBannerQueryHandler>();
             builder.Services.AddScoped<GetBannerByIdQueryHandler>();
             builder.Services.AddScoped<CreateBannerCommandHandler>();
@@ -35,6 +41,7 @@ namespace CarBook.WebApi
             builder.Services.AddScoped<RemoveBannerCommandHandler>();
             /**/
             /**/
+
             builder.Services.AddScoped<GetBrandQueryHandler>();
             builder.Services.AddScoped<GetBrandByIdQueryHandler>();
             builder.Services.AddScoped<CreateBrandCommandHandler>();
@@ -48,6 +55,7 @@ namespace CarBook.WebApi
             builder.Services.AddScoped<CreateCarCommandHandler>();
             builder.Services.AddScoped<UpdateCarCommandHandler>();
             builder.Services.AddScoped<RemoveCarCommandHandler>();
+            builder.Services.AddScoped<GetCarWithBrandQueryHandler>();
 
 
 
