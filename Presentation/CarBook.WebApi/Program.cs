@@ -10,6 +10,7 @@ using CarBook.Application.Features.CQRS.Handlers.CategoryHandlers;
 using CarBook.Application.Features.CQRS.Handlers.ContactHandlers;
 using CarBook.Application.Interfaces;
 using CarBook.Application.Interfaces.CarInterfaces;
+using CarBook.Application.Services;
 using CarBook.Domain.Entities;
 using CarBook.Persistence.Context;
 using CarBook.Persistence.Repositories;
@@ -78,17 +79,11 @@ namespace CarBook.WebApi
             builder.Services.AddScoped<UpdateContactCommandHandler>();
             builder.Services.AddScoped<RemoveContactCommandHandler>();
 
-
-
-
-
-
-
-
-
-
-
-
+            /**/
+            /**/
+            builder.Services.AddApplicationService(builder.Configuration);
+            /**/
+            /**/
             builder.Services.AddControllers();
 
 

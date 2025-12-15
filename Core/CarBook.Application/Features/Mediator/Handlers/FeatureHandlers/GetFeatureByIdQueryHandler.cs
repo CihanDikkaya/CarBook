@@ -1,6 +1,6 @@
-﻿using CarBook.Application.Interfaces;
-using CarBook.Application.Mediator.Queries.FeatureQueries;
-using CarBook.Application.Mediator.Results.FeatureResults;
+﻿using CarBook.Application.Features.Mediator.Queries.FeatureQueries;
+using CarBook.Application.Features.Mediator.Results.FeatureResults;
+using CarBook.Application.Interfaces;
 using CarBook.Domain.Entities;
 using MediatR;
 using System;
@@ -9,7 +9,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace CarBook.Application.Mediator.Handlers.FeatureHandlers
+namespace CarBook.Application.Features.Mediator.Handlers.FeatureHandlers
 {
     public class GetFeatureByIdQueryHandler : IRequestHandler<GetFeatureByIdQuery, GetFeatureByIdQueryResult>
     {

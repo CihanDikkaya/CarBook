@@ -1,14 +1,14 @@
-﻿using System;
+﻿using MediatR;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace CarBook.Application.Mediator.Results.FeatureResults
+namespace CarBook.Application.Features.Mediator.Commands.FeatureCommands
 {
-    public class GetFeatureQueryResult
+    public class CreateFeatureCommand : IRequest
     {
-        public int FeatureID { get; set; }
         public string FeatureName { get; set; }
     }
 }

@@ -5,10 +5,11 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace CarBook.Application.Mediator.Commands.FeatureCommands
+namespace CarBook.Application.Features.Mediator.Commands.FeatureCommands
 {
-    public class CreateFeatureCommand : IRequest
+    public class UpdateFeatureCommand:IRequest
     {
+        public int FeatureID { get; set; }
         public string FeatureName { get; set; }
     }
 }
